@@ -1,0 +1,20 @@
+name: Sectium Electron CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run Electron compatibility & live cas-v1 hydration tests
+        run: node --test test/electron-compat.test.mts
+      - name: Run hello-electron example
+        run: node examples/hello-electron/main.mts

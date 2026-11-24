@@ -1,0 +1,41 @@
+{
+  "name": "sectium-electron",
+  "version": "0.1.0",
+  "description": "Drop-in Electron-compatible desktop runtime powered by Sectium Display, b8g-ghost CAS, Shared V8, and B8G_ARENA_V1 zero-copy IPC (120 KB vs 200 MB)",
+  "type": "module",
+  "main": "./src/index.mts",
+  "module": "./src/index.mts",
+  "types": "./src/index.mts",
+  "bin": {
+    "sectium-electron": "./src/cli.mts",
+    "electron": "./src/cli.mts"
+  },
+  "exports": {
+    ".": "./src/index.mts",
+    "./main": "./src/index.mts",
+    "./renderer": "./src/renderer.mts",
+    "./common": "./src/index.mts"
+  },
+  "scripts": {
+    "test": "node --test test/electron-compat.test.mts",
+    "example": "node examples/hello-electron/main.mts"
+  },
+  "keywords": [
+    "electron",
+    "sectium",
+    "b8g-ghost",
+    "awesome-os",
+    "desktop",
+    "zero-copy",
+    "cas",
+    "v8"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awesome-os/sectium-electron.git"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
