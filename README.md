@@ -6,6 +6,28 @@
 
 ---
 
+## Quick Install & Usage
+
+### Install via `pnpm` (or release tarball)
+
+```powershell
+pnpm add github:awesome-os/sectium-electron
+```
+
+Or download the latest SHA-256 verified archive from [`Releases`](https://github.com/awesome-os/sectium-electron/releases/latest).
+
+### Usage & Verification
+
+```powershell
+# Run the included hello-electron example directly on Node.js 22+
+node examples/hello-electron/main.mts
+
+# Verify locally (hydrates b8g-ghost-abi + libsectium_display from cas-v1)
+node --test
+```
+
+---
+
 ## Why `sectium-electron`?
 
 | Dimension | Traditional Electron | `sectium-electron` |
