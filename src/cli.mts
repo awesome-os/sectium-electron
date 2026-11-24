@@ -11,6 +11,7 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { loadGhostAbiAddon } from './ghost-runtime.mts';
 import { ipcMain } from './ipc.mts';
+import { installLinkedBindings } from './linked-bindings.mts';
 
 const args = process.argv.slice(2);
 if (args.length === 0 || args[0] === '--help' || args[0] === '-h') {
@@ -29,6 +30,8 @@ if (!existsSync(target)) {
   console.error(`sectium-electron: entry file not found: ${target}`);
   process.exit(1);
 }
+
+installLinkedBindings();
 
 try {
   const { addon } = await loadGhostAbiAddon();

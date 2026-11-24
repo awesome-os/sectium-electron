@@ -1,0 +1,45 @@
+name: Sync Upstream Electron Docs & Types
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sectium-electron
+        uses: actions/checkout@v4
+
+      - name: Fetch upstream electron/electron docs/api and electron.d.ts
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/electron-upstream docs/upstream
+          mkdir -p docs/upstream/api
+
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/electron/electron.git /tmp/electron-upstream
+          git -C /tmp/electron-upstream sparse-checkout set docs/api LICENSE
+
+          cp -r /tmp/electron-upstream/docs/api/. docs/upstream/api/
+          cp /tmp/electron-upstream/LICENSE docs/upstream/LICENSE.electron-MIT
+
+          curl -fsSL "https://github.com/electron/electron/releases/latest/download/electron.d.ts" -o docs/upstream/electron.d.ts
+
+      - name: Commit updated upstream docs if changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain docs/upstream)" ]; then
+            echo "No upstream changes detected."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/upstream
+          git commit -m "docs(upstream): sync electron/electron docs/api and electron.d.ts"
+          git push

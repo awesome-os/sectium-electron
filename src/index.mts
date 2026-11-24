@@ -45,3 +45,10 @@ export {
   sendSectiumDeviceRequest,
   type SectiumTransportMode,
 } from './sectium-bridge.mts';
+export {
+  installLinkedBindings,
+  getLinkedBinding,
+  LINKED_BINDING_NAMES,
+  type LinkedBindingName,
+  type V8UtilBinding,
+} from './linked-bindings.mts';
