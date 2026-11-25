@@ -1,0 +1,52 @@
+{
+  "schema": "holo-compiler-lockfile-v1",
+  "abiMagic": "0x33564742",
+  "casLayout": "v11",
+  "repo": "awesome-os/sectium-electron",
+  "targets": [
+    "win64",
+    "linux-x64",
+    "linux-arm64",
+    "macos-arm64",
+    "wasm32-wasi"
+  ],
+  "generatedAt": "2026-11-24T23:53:02.473Z",
+  "dependencies": [
+    {
+      "id": "awesome-os/sectium-electron/sectium-electron-v0.2.0.tar.zst",
+      "kind": "object",
+      "version": "v0.2.0",
+      "target": "any",
+      "sha512": "65b54d1475d2fecf305de6f84e88ca129b7553a2ef26e09e466ac0641d6b242981fe06e6d8b888fa5d1599bf612bef73ea62beb0a99b590f37c537ec2271fbb4",
+      "size": 19528,
+      "executable": false,
+      "blob": "v11/files/65/65b54d1475d2fecf305de6f84e88ca129b7553a2ef26e09e466ac0641d6b242981fe06e6d8b888fa5d1599bf612bef73ea62beb0a99b590f37c537ec2271fbb4",
+      "url": "https://github.com/awesome-os/sectium-electron/releases/download/v0.2.0/sectium-electron-v0.2.0.tar.zst",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/sectium-electron/SHA256SUMS.txt",
+      "kind": "object",
+      "version": "v0.2.0",
+      "target": "any",
+      "sha512": "c09198c9ed6767dd03360561ca21b7c20b1009e97d9c575ea80604c2c5052e387248c0ef6476078d8c65898a55fcddc642969d1c7d8255ec1f791fdbbb9a9f11",
+      "size": 98,
+      "executable": false,
+      "blob": "v11/files/c0/c09198c9ed6767dd03360561ca21b7c20b1009e97d9c575ea80604c2c5052e387248c0ef6476078d8c65898a55fcddc642969d1c7d8255ec1f791fdbbb9a9f11",
+      "url": "https://github.com/awesome-os/sectium-electron/releases/download/v0.2.0/SHA256SUMS.txt",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/sectium-electron/SHA512SUMS.txt",
+      "kind": "object",
+      "version": "v0.2.0",
+      "target": "any",
+      "sha512": "b38b7bb22a7ba7303a4880c486d73a07c47d442e8ac9da3bcfdbac5558345e0a1268adce2e8be9729ef41ca420ee7b1a40fa60d923fcadad69516009c4152002",
+      "size": 162,
+      "executable": false,
+      "blob": "v11/files/b3/b38b7bb22a7ba7303a4880c486d73a07c47d442e8ac9da3bcfdbac5558345e0a1268adce2e8be9729ef41ca420ee7b1a40fa60d923fcadad69516009c4152002",
+      "url": "https://github.com/awesome-os/sectium-electron/releases/download/v0.2.0/SHA512SUMS.txt",
+      "dependencies": []
+    }
+  ]
+}
