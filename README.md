@@ -93,3 +93,13 @@ All Electron API docs in [`docs/`](docs/) are adapted from upstream [`electron/e
 - **Canonical $O(1)$ CAS Store:** [`awesome-os/b8g-ghost @ cas-v1`](https://github.com/awesome-os/b8g-ghost/releases/tag/cas-v1)
 - **Sectium Browser & Display:** [`awesome-os/sectium-browser`](https://github.com/awesome-os/sectium-browser)
 - **100 Native Recipes:** [`awesome-os/ghost-100`](https://github.com/awesome-os/ghost-100)
+
+## Quick Install & Run (Windows / Linux / macOS)
+
+```sh
+# Install / hydrate from v11 CAS via holo-pm
+holo-pm install repository://github.com/awesome-os/sectium-electron@main
+
+# Or project & run directly via holo-project (0-byte hardlink)
+holo-project "project://node/sectium-electron?from=repository://github.com/awesome-os/sectium-electron@main"
+```
